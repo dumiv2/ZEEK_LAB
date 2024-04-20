@@ -39,14 +39,29 @@ List any software or dependencies required to run your project. For example:
 - VMware Workstation Pro 17
 
 ### Installation
+Here is the Network of the lab : 
+![Network Diagram](image/Lab_Network.png)
 
-1. Install VMware Workstation Pro 17 on your system.
-2. Set up a virtualized environment within VMware Workstation. 
-![Network Diagram](image/Lab_Networking.png)
+1. [Install VMware Workstation Pro 17](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html) on your system.
+2. Inside VMware Workstation Pro, config Virtual Network Editor :
 
-3. Install Zeek within the virtualized environment. You can refer to the Zeek documentation for installation instructions.
-4. Set up 
-5. 
+By default, VMware Workstation ships with three virtual network segments defined – VMnet0 ,
+VMnet1 , and VMnet8 . VMnet0 serves as the bridged network segment, VMnet1 acts as a host-only
+network, and VMnet8 is a NAT network segment. We'll need to create two more virtual
+network segments, and make some configuration changes while we're here.
+![Virtual Network Editor 1](image/image2.png)
+![Virtual Network Editor 2](image/image.png)
+Then configure the network segment :
+VMnet0 : It is recommended to set the Bridged to drop-down to a specific network card.
+VMnet1 : Verify the Host-only radio button is selected. Uncheck the Use local DHCP service checkbox
+VMnet2 : Verify the Host-only radio button is selected. Uncheck the Connect a host virtual adapter, and Use local
+DHCP service checkbox
+VMnet3 : Verify the Host-only radio button is selected. Uncheck the Connect a host virtual adapter, and Use local
+DHCP service checkbox
+It is extremely important that the VMware DHCP service is disabled for VMnet1 , 2 and 3 and that the host virtual
+adapter is disabled for VMnet2 and 3 . Once finished Click Apply, then OK to close the Virtual Network Editor.
+![Virtual Network Editor 2](image/image3.png)
+2. [Install pfsense ISO](https://www.pfsense.org/download) 
 
 ## Usage
 
