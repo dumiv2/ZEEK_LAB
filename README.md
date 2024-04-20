@@ -40,17 +40,20 @@ List any software or dependencies required to run your project. For example:
 
 ### Installation
 Here is the Network of the lab : 
-![Network Diagram](image/Lab_Network.png)
+![Network Diagram](image/Lab_network.png)
 
 1. [Install VMware Workstation Pro 17](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html) on your system.
-2. Inside VMware Workstation Pro, config Virtual Network Editor :
+2. Network Segmentation : 
+Inside VMware Workstation Pro, config Virtual Network Editor :
 
 By default, VMware Workstation ships with three virtual network segments defined – VMnet0 ,
 VMnet1 , and VMnet8 . VMnet0 serves as the bridged network segment, VMnet1 acts as a host-only
 network, and VMnet8 is a NAT network segment. We'll need to create two more virtual
 network segments, and make some configuration changes while we're here.
+
 ![Virtual Network Editor 1](image/image2.png)
-![Virtual Network Editor 2](image/image.png)
+![Virtual Network Editor 2](image/image.png) 
+
 Then configure the network segment :
 VMnet0 : It is recommended to set the Bridged to drop-down to a specific network card.
 VMnet1 : Verify the Host-only radio button is selected. Uncheck the Use local DHCP service checkbox
@@ -60,8 +63,18 @@ VMnet3 : Verify the Host-only radio button is selected. Uncheck the Connect a ho
 DHCP service checkbox
 It is extremely important that the VMware DHCP service is disabled for VMnet1 , 2 and 3 and that the host virtual
 adapter is disabled for VMnet2 and 3 . Once finished Click Apply, then OK to close the Virtual Network Editor.
+
 ![Virtual Network Editor 2](image/image3.png)
-2. [Install pfsense ISO](https://www.pfsense.org/download) 
+
+2. [Install pfsense ISO ](https://www.pfsense.org/download) as a virtual machine
+Create the virtual machine with the following requirements :
+![pfSense Configuration](image/image4.png) 
+![pfSense Configuration](image/image5.png) 
+
+3. Configure the network segmentations 
+
+
+
 
 ## Usage
 
