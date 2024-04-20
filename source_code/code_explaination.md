@@ -77,11 +77,12 @@ event zeek_init() &priority=5 {
 ```
 
 The zeek_init event handler initializes a SumStats reducer to sum the observations of connection attempts.
-It creates a SumStats object named "finding port scanners" with the specified parameters:
+```It creates a SumStats object named "finding port scanners" with the specified parameters:
 $epoch: The time period over which to monitor connection attempts (set to 5 minutes).
 $reducers: A set containing the defined reducer.
 $threshold: The threshold value for detecting port scanning activity (defined by the threshold constant).
 $threshold_val: A function that calculates the sum of connection attempts.
 $threshold_crossed: A function that generates a notice when the threshold is crossed, indicating potential port scanning activity.
-Conclusion
+```
+### 6. Conclusion
 This Zeek script provides a mechanism for detecting port scanning activity within a network by monitoring connection attempts and generating notices when suspicious activity is observed.
