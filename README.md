@@ -39,8 +39,8 @@ List any software or dependencies required to run your project. For example:
 - VMware Workstation Pro 17
 
 ### Installation
-Here is the Network of the lab : 
-![Network Diagram](image/Lab_network.png)
+Here is the overview of the lab : 
+![Network Diagram](image/Lab_network.png)\
 
 1. [Install VMware Workstation Pro 17](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html) on your system.
 2. Network Segmentation : 
@@ -49,10 +49,10 @@ Inside VMware Workstation Pro, config Virtual Network Editor :
 By default, VMware Workstation ships with three virtual network segments defined – VMnet0 ,
 VMnet1 , and VMnet8 . VMnet0 serves as the bridged network segment, VMnet1 acts as a host-only
 network, and VMnet8 is a NAT network segment. We'll need to create two more virtual
-network segments, and make some configuration changes while we're here.
+network segments, and make some configuration changes while we're here.\
 
-![Virtual Network Editor 1](image/image2.png)
-![Virtual Network Editor 2](image/image.png) 
+![Virtual Network Editor 1](image/image2.png)\
+![Virtual Network Editor 2](image/image.png) \
 
 Then configure the network segment :
 VMnet0 : It is recommended to set the Bridged to drop-down to a specific network card.
@@ -66,12 +66,20 @@ adapter is disabled for VMnet2 and 3 . Once finished Click Apply, then OK to clo
 
 ![Virtual Network Editor 2](image/image3.png)
 
-2. [Install pfsense ISO ](https://www.pfsense.org/download) as a virtual machine
+2. [Install pfsense ISO ](https://www.pfsense.org/download) as a virtual machine\
 Create the virtual machine with the following requirements :
-![pfSense Configuration](image/image4.png) 
-![pfSense Configuration](image/image5.png) 
+![pfSense Configuration](image/image4.png) \
+![pfSense Configuration](image/image5.png) \
 
 3. Configure the network segmentations 
+First, boot up the pfSense machine and enter the assign Interfaces Wizard .This wizard is use to map our virtual machine's
+network interfaces (Adapter 1, Adapter 2, and Adapter 3) to their pfSense aliases – WAN, LAN, or OPT1.\
+![Interfaces Wizard](image/image6.png) \
+The next task we will need to perform on the pfSense command-line is assigning IP addresses to
+the WAN, LAN, and OPT1 interfaces using the Set interface(s) IP address wizard.
+
+![Setting IP Addresses for WAN, LAN, and OPT1](image/image7.png) \
+![Setting IP Addresses for WAN, LAN, and OPT1](image/image8.png) \
 
 
 
