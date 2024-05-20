@@ -10,7 +10,6 @@ The provided Zeek script is designed to detect SYN flood attacks within a networ
 
 The script starts by loading necessary frameworks for Zeek, such as notice.
 
-
 ```zeek
 @load notice
 ```
